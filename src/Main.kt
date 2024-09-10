@@ -11,12 +11,24 @@
 fun main(args: Array<String>) {
 
 
-    val songOne = Song("The Mesopotamians", "They Might Be Giants")
-    val songTwo = Song("Going Underground", "The Jam")
-    val songThree = Song("Make Me Smile", "Steve Harley")
-    songTwo.play()
-    songTwo.stop()
-    songThree.play()
+    val animals = arrayOf(Hippo(), Wolf())
+    for (item in animals) {
+        item.roam()
+        item.eat()
+    }
+    val vet = Vet()
+    val wolf = Wolf()
+    val hippo = Hippo()
+    vet.giveShot(wolf)
+    vet.giveShot(hippo)
+
+
+//    val songOne = Song("The Mesopotamians", "They Might Be Giants")
+//    val songTwo = Song("Going Underground", "The Jam")
+//    val songThree = Song("Make Me Smile", "Steve Harley")
+//    songTwo.play()
+//    songTwo.stop()
+//    songThree.play()
 }
 
 fun rockPaperScissors() {
@@ -56,8 +68,9 @@ fun printResult(userChoice: String, gameChoice: String) {
     //Определить результат
     if (userChoice == gameChoice) result = "Tie!"
     else if ((userChoice == "Rock" && gameChoice == "Scissors") ||
-            (userChoice == "Paper" && gameChoice == "Rock") ||
-            (userChoice == "Scissors" && gameChoice == "Paper")) result = "You win!"
+        (userChoice == "Paper" && gameChoice == "Rock") ||
+        (userChoice == "Scissors" && gameChoice == "Paper")
+    ) result = "You win!"
     else result = "You lose!"
     //Вывести результат
     println("You chose $userChoice. I chose $gameChoice. $result")
